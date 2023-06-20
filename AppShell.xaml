@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="GorselProgOdevi2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:GorselProgOdevi2"
+    Shell.FlyoutBehavior="Flyout"
+    BackgroundColor="White">
+
+    <ShellContent
+        Title="Anasayfa"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Icon="home.png"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="Kurlar"
+        ContentTemplate="{DataTemplate local:Kur}"
+        Icon="currency.png"
+        Route="Kur" />
+
+    <ShellContent
+        Title="Haberler"
+        ContentTemplate="{DataTemplate local:News}"
+        Icon="megaphone.png"
+        Route="News" />
+
+    <ShellContent
+        Title="Hava Durumu"
+        ContentTemplate="{DataTemplate local:Hava}"
+        Icon="cloudy.png"
+        Route="Hava" />
+
+    <ShellContent
+        Title="Ayarlar"
+        ContentTemplate="{DataTemplate local:Ayarlar}"
+        Icon="setting.png"
+        Route="Ayarlar" />
+
+</Shell>

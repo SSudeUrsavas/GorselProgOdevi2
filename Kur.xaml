@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselProgOdevi2.Kur"
+             Title="Güncel Kurlar" BackgroundColor="Gray">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+        <Label Grid.Row="0" Text="Güncel Döviz Kurları" TextColor="#cf450e" FontSize="Large" Margin="20"/>
+
+        <CollectionView Grid.Row="1" Margin="20" x:Name="dovizliste">
+            <CollectionView.Header>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="*, *, *, *, *">
+                        <Label Grid.Column="0" Text="Adı"/>
+                        <Label Grid.Column="1" Text="Alış Fiyatı" />
+                        <Label Grid.Column="2" Text="Satış Fiyatı" />
+                        <Label Grid.Column="3" Text="Fark" />
+                        <Label Grid.Column="4" Text="Yön" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.Header>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ScrollView>
+                        <Grid ColumnDefinitions="*, *, *, *, *">
+                            <Label Grid.Column="0" Text="{Binding DName}" />
+                            <Label Grid.Column="1" Text="{Binding FAlis}" />
+                            <Label Grid.Column="2" Text="{Binding FSatis}" />
+                            <Label Grid.Column="3" Text="{Binding Fark}" />
+                            <Label Grid.Column="4" Text="{Binding Yon}" HeightRequest="20" />
+                        </Grid>
+                    </ScrollView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Grid.Row="2" Text="Güncelle" Margin="20" BackgroundColor="#cf450e" TextColor="White" Clicked="Button_Clicked" ImageSource="sync.png" HeightRequest="20"/>
+
+    </Grid>
+    
+</ContentPage>

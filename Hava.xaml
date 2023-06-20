@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselProgOdevi2.Hava"
+             Title="Hava Durumu" Padding="10" Unloaded="ContentPage_Unloaded">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="add.png" Order="Primary" x:Name="Ekle" Clicked="Ekle_Clicked"/>
+        <ToolbarItem IconImageSource="sync.png" Order="Primary" x:Name="Yukle" Clicked="Yukle_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <RefreshView RefreshColor="DeepSkyBlue" x:Name="refreshView" Refreshing="Yukle_Clicked">
+
+        <CollectionView x:Name="listCity">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <Grid Margin="10" RowDefinitions="Auto, *" RowSpacing="10" ColumnDefinitions="*, Auto">
+
+                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" FontSize="Title"/>
+
+                        <ImageButton Grid.Row="0" Grid.Column="1" x:Name="Sil" Source="delete.png" Clicked="Sil_Clicked"  WidthRequest="15" CommandParameter="{Binding Name}"/>
+
+                        <WebView Grid.Row="1" Grid.ColumnSpan="2" Source="{Binding Source}" HeightRequest="100" BackgroundColor="White"/>
+
+                    </Grid>
+                    
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+    </RefreshView>
+    
+</ContentPage>

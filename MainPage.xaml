@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselProgOdevi2.MainPage"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="21"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label Text="ÖDEV-2" 
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   FontSize="30"/>
+
+            <Border Background="skyblue" 
+                    HeightRequest="200"
+                    Margin="71">
+
+                <Image Source="foto.jpg"/>
+
+            </Border>
+
+            <Label Text="Seher Sude Ursavaş" 
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   FontSize="30"/>
+
+            <Label Text="20010310030" 
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   FontSize="30"/>
+
+            <Label Text="Bartın Üniversitesi Bilgisayar Mühendisliği" 
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   FontSize="15"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

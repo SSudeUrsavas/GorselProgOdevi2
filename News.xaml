@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselProgOdevi2.News"
+             Title="Haberler"
+             BackgroundColor="White">
+
+    <Grid RowDefinitions="Auto, *"
+          RowSpacing="10">
+
+        <CollectionView Grid.Row="0" x:Name="lstMenu" SelectionMode="Single" SelectionChanged="lstMenu_SelectionChanged">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Baslik}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <CollectionView Grid.Row="1">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+
+                        <Image Source="{Binding enclosure.link}"/>
+
+                        <Label Text="{Binding title}"/>
+
+                        <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
+                            <Label Text="{Binding author}"/>
+                            <Label Text="    |    "/>
+                            <Label Text="{Binding pubData}"/>
+                        </HorizontalStackLayout>
+
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+
+    </Grid>
+    
+</ContentPage>
